@@ -29,13 +29,21 @@ const routes = [
   //     title: '商品详情'
   //   }
   // }
+  //modal配置
     {
     name: 'goods',
     component: () => import("./view/testModel/HomeView.vue"),
     meta: {
       title: 'model配置'
     }
-  }
+  },
+  // {
+  //   name: 'goods',
+  //   component: () => import("./view/promiseAll.vue"),
+  //   meta: {
+  //     title: 'promiseAll'
+  //   }
+  // }
 ];
 
 // add route path

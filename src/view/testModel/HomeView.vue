@@ -1,7 +1,9 @@
 <template>
   <div class="homeView">
-    <BaseBox v-model="name" value="some value" ></BaseBox>
-    父组件name:{{name}}
+    <BaseBox v-model="name" value="some value"></BaseBox>
+    <van-button class="btn" v-if="name == 1" type="primary" >父组件样式1</van-button>
+    <van-button class="btn" v-if="name == 2" type="info" >父组件样式2</van-button>
+    <van-button class="btn" v-if="name == 3" type="warning" >父组件样式3</van-button>
   </div>
 </template>
 
@@ -18,16 +20,16 @@ export default {
   data() {
     return {
       //定义v-model属性初值
-      name: '父组件定义初始值'
+      name: '1'
     }
   },
   created() {
     this.$nextTick(() => {
-    
+
     })
   },
-  methods:{
-  
+  methods: {
+
   }
 
 }
@@ -38,6 +40,9 @@ export default {
   width: 80%;
   height: auto;
   margin: auto;
+}
+.btn{
+  margin-top: 10%;
 }
 </style>
 

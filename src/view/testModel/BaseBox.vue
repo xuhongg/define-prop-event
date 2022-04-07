@@ -1,7 +1,11 @@
 
 <template>
-    <div>
-        <input type="text" :value="childName" @input="updateVal($event.target.value)" />
+    <div class="bj">
+        <van-radio-group v-model="uname" @change="updateVal" direction="horizontal">
+            <van-radio name="1">样式1</van-radio>
+            <van-radio name="2">样式2</van-radio>
+            <van-radio name="3">样式3</van-radio>
+        </van-radio-group>
     </div>
 </template>
 
@@ -16,12 +20,13 @@ export default {
     props: {
         uname: {
             type: String,
-            default: '子组件定义初始值'//会被父组件的绑定值给覆盖掉
+            default: '1'//会被父组件的绑定值给覆盖掉
         }
     },
     methods: {
         //val就是更新后的值 通知父组件更新
         updateVal(val) {
+            window.console.log(val)
             this.$emit('changeX', val)
         }
     }
@@ -29,5 +34,8 @@ export default {
 </script>
 
 <style scoped>
+.bj {
+    margin-top: 10%;
+}
 </style>
 
